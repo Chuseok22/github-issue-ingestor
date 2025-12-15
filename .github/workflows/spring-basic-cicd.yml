@@ -1,19 +1,19 @@
-name: workflow-name # 워크플로 이름
+name: spring-basic-cicd # 워크플로 이름
 
 on:
   push:
     branches: # 워크플로 대상 브랜치
-#      - main
+      - main
 #      - test
 
 env:
-  PROJECT_NAME: my-project # 프로젝트 명
+  PROJECT_NAME: github-issue-ingestor # 프로젝트 명
   DOCKERHUB_REPO: ${{ secrets.DOCKERHUB_USERNAME }}
-  APP_IMAGE_SUFFIX: "-back"
-  MAIN_PORT: "8080"
-  TEST_PORT: "8081"
+  APP_IMAGE_SUFFIX: ""
+  MAIN_PORT: "8083"
+  TEST_PORT: "8084"
   APP_EXPOSE_PORT: "8080"
-  MOUNT_DIR: "/volume/project/..."
+  MOUNT_DIR: "/volume/projects/romrom"
   SPRING_PROFILE_MAIN: "prod"
   SPRING_PROFILE_TEST: "prod"
 
@@ -29,7 +29,7 @@ jobs:
       - name: JDK 설정
         uses: actions/setup-java@v4
         with:
-          java-version: '21'
+          java-version: '25'
           distribution: 'temurin'
           cache: 'gradle'
 
