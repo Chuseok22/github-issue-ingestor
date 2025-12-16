@@ -11,7 +11,7 @@ import lombok.experimental.UtilityClass;
 public class HashingUtil {
 
   public String sha256Hex(String value) {
-    if (nvl(value, "").isEmpty()) {
+    if (value == null) {
       return sha256Hex("");
     }
 
