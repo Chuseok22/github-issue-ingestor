@@ -1,4 +1,4 @@
-package xyz.romrom.githubissueingestor.ollama.property;
+package xyz.romrom.githubissueingestor.ollama.infrastructure.property;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

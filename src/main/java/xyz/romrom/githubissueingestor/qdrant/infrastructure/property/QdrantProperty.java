@@ -1,4 +1,4 @@
-package xyz.romrom.githubissueingestor.qdrant.property;
+package xyz.romrom.githubissueingestor.qdrant.infrastructure.property;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

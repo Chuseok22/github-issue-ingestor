@@ -1,4 +1,4 @@
-package xyz.romrom.githubissueingestor.github.property;
+package xyz.romrom.githubissueingestor.github.infrastructure.property;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
