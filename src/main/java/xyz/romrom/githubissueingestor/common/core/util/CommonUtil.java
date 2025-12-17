@@ -14,7 +14,7 @@ public class CommonUtil {
    * @param str2 str1 이 null 인경우 반환할 문자열
    * @return null 이 아닌 문자열
    */
-  public String nvl(String str1, String str2) {
+  public static String nvl(String str1, String str2) {
     if (str1 == null) { // str1 이 null 인 경우
       return str2;
     } else if (str1.equals("null")) { // str1 이 문자열 "null" 인 경우
