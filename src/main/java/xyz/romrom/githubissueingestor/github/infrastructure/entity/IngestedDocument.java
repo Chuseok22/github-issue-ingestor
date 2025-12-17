@@ -41,6 +41,9 @@ public class IngestedDocument {
   private SourceType sourceType;
 
   @Column(nullable = false)
+  private String sourceKey;
+
+  @Column(nullable = false)
   private UUID qdrantPointId;
 
   @Column(nullable = false)
@@ -51,9 +54,10 @@ public class IngestedDocument {
   @Column(nullable = false)
   private Instant ingestedAt;
 
-  public IngestedDocument(String repositoryFullName, SourceType sourceType, UUID qdrantPointId, String contentHash, Instant sourceUpdatedAt, Instant ingestedAt) {
+  public IngestedDocument(String repositoryFullName, SourceType sourceType, String sourceKey, UUID qdrantPointId, String contentHash, Instant sourceUpdatedAt, Instant ingestedAt) {
     this.repositoryFullName = repositoryFullName;
     this.sourceType = sourceType;
+    this.sourceKey = sourceKey;
     this.qdrantPointId = qdrantPointId;
     this.contentHash = contentHash;
     this.sourceUpdatedAt = sourceUpdatedAt;
