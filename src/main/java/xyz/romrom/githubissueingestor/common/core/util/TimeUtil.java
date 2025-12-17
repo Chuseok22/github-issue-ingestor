@@ -1,12 +1,11 @@
 package xyz.romrom.githubissueingestor.common.core.util;
 
-import static xyz.romrom.githubissueingestor.common.core.util.CommonUtil.*;
+import static xyz.romrom.githubissueingestor.common.core.util.CommonUtil.nvl;
 
 import java.time.DateTimeException;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.time.temporal.ChronoUnit;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass

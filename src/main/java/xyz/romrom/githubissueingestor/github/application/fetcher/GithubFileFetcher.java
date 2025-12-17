@@ -57,7 +57,7 @@ public class GithubFileFetcher implements GithubFetcher {
 
     List<SourceDocument> documents = new ArrayList<>();
     if (tree.tree() == null) {
-      return new GithubFetchResult(SourceType.REPO_FILE, List.of(), headSha);
+      return new GithubFetchResult(SourceType.REPO_FILE, List.of(), lastCursor);
     }
 
     for (GithubTreeItem item : tree.tree()) {
