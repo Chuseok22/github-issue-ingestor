@@ -108,8 +108,13 @@ public class GithubFileFetcher implements GithubFetcher {
   }
 
   private String decodeBase64Content(String base64WithNewlines) {
-    String normalized = base64WithNewlines.replace("\n", "").replace("\r", "");
-    byte[] decoded = Base64.getDecoder().decode(normalized);
-    return new String(decoded, StandardCharsets.UTF_8);
+    try {
+      String normalized = base64WithNewlines.replace("\n", "").replace("\r", "");
+      byte[] decoded = Base64.getDecoder().decode(normalized);
+      return new String(decoded, StandardCharsets.UTF_8);
+    } catch (IllegalArgumentException e) {
+      log.warn("Base64 디코딩 실패: {}", e.getMessage());
+      return "";
+    }
   }
 }
