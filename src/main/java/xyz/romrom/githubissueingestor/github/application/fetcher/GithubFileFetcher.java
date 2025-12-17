@@ -50,7 +50,10 @@ public class GithubFileFetcher implements GithubFetcher {
 
     GithubTreeResponse tree = githubApiClient.getTreeRecursive(repositoryFullName, headSha);
 
-    Instant commitTime = TimeUtil.isoToInstant(headCommit.commit().author().date());
+    Instant commitTime = Instant.now();
+    if (headCommit.commit() != null && headCommit.commit().author() != null) {
+      commitTime = TimeUtil.isoToInstant(headCommit.commit().author().date());
+    }
 
     List<SourceDocument> documents = new ArrayList<>();
     if (tree.tree() == null) {
