@@ -1,5 +1,8 @@
 package xyz.romrom.githubissueingestor.common.core.util;
 
+import static xyz.romrom.githubissueingestor.common.core.util.CommonUtil.*;
+
+import java.time.DateTimeException;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -32,10 +35,13 @@ public class TimeUtil {
   }
 
   public Instant isoToInstant(String iso) {
+    if (nvl(iso, "").isEmpty()) {
+      throw new IllegalArgumentException("ISO 문자열이 null이거나 비어있습니다");
+    }
     try {
       return Instant.parse(iso);
-    } catch (Exception e) {
-      return Instant.now();
+    } catch (DateTimeException e) {
+      throw new IllegalArgumentException("ISO 문자열 파싱 실패: " + iso, e);
     }
   }
 }
