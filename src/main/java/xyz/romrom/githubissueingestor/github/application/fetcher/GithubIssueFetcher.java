@@ -24,7 +24,7 @@ import xyz.romrom.githubissueingestor.github.core.fetcher.GithubFetcher;
 @RequiredArgsConstructor
 public class GithubIssueFetcher implements GithubFetcher {
 
-  private static final Instant DEFAULT_SINCE = Instant.parse("1970-01-01-T00:00:00Z");
+  private static final Instant DEFAULT_SINCE = Instant.parse("1970-01-01T00:00:00Z");
 
   private final GithubApiClient githubApiClient;
   private final CursorService cursorService;
