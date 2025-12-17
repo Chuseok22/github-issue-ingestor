@@ -47,7 +47,7 @@ public class GithubApiClient {
 
   public GithubTreeResponse getTreeRecursive(String repositoryFullName, String treeSha) {
     String[] parts = split(repositoryFullName);
-    String path = "/repos/" + parts[0] + "/" + parts[1] + "/git/trees" + treeSha;
+    String path = "/repos/" + parts[0] + "/" + parts[1] + "/git/trees/" + treeSha;
     log.info("깃허브 tree fetch 요청: {}", path);
 
     URI uri = UriComponentsBuilder.fromPath(path)
