@@ -59,9 +59,6 @@ dependencies {
     // HTTP Logging
     implementation 'com.chuseok22:logging:0.0.1'
 
-    // AOP
-    implementation 'org.springframework.boot:spring-boot-starter-aop'
-
     // Webflux
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
 }
